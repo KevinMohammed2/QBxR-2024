@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Slant : MonoBehaviour
+public class OutRoute : MonoBehaviour
 {
     public float speed = 5f;
-    public float yardDist = 5f;
-    public float slantAngle = 45f;
-    public bool slanting = false;
+    public float yardDist = 10f;
+    public float slantAngle = 90f;
+    public bool ninetyCut = false;
     private Vector3 startPos;
     private float timeElasped = 0f;
     public float stopTime = 4f;
@@ -15,13 +15,12 @@ public class Slant : MonoBehaviour
         startPos = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeElasped += Time.deltaTime;
         if (timeElasped < stopTime)
         {
-            if (!slanting)
+            if (!ninetyCut)
             {
                 float distCover = Vector3.Distance(startPos, transform.position);
                 if (distCover < yardDist)
@@ -30,15 +29,14 @@ public class Slant : MonoBehaviour
                 }
                 else
                 {
-                    slanting = true;
+                    ninetyCut = true;
                 }
             }
-            else
-            {
-                Vector3 slantDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
-                transform.Translate(slantDirection * speed * Time.deltaTime);   
-            }
         }
-
+        else
+        {
+            Vector3 cutDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+            transform.Translate(cutDirection * speed * Time.deltaTime);
+        }
     }
 }
