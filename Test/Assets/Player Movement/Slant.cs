@@ -1,3 +1,4 @@
+using GLTFast.Schema;
 using UnityEngine;
 
 public class Slant : MonoBehaviour
@@ -5,7 +6,7 @@ public class Slant : MonoBehaviour
     public float speed = 5f;
     public float yardDist = 5f;
     public float slantAngle = 45f;
-    public bool slanting = false;
+    public bool directionChange = false;
     private Vector3 startPos;
     private float timeElasped = 0f;
     public float stopTime = 4f;
@@ -15,13 +16,13 @@ public class Slant : MonoBehaviour
         startPos = transform.position;
     }
 
-    // Update is called once per frame
+  // Update is called once per frame
     void Update()
     {
         timeElasped += Time.deltaTime;
         if (timeElasped < stopTime)
         {
-            if (!slanting)
+            if (!directionChange)
             {
                 float distCover = Vector3.Distance(startPos, transform.position);
                 if (distCover < yardDist)
@@ -30,7 +31,7 @@ public class Slant : MonoBehaviour
                 }
                 else
                 {
-                    slanting = true;
+                    directionChange = true;
                 }
             }
             else

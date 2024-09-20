@@ -32,11 +32,12 @@ public class OutRoute : MonoBehaviour
                     ninetyCut = true;
                 }
             }
+            else
+            {
+                Vector3 cutDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+                transform.Translate(cutDirection * speed * Time.deltaTime);
+            }
         }
-        else
-        {
-            Vector3 cutDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
-            transform.Translate(cutDirection * speed * Time.deltaTime);
-        }
+        
     }
 }
