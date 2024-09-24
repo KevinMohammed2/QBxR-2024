@@ -40,6 +40,5 @@ public class Slant : MonoBehaviour
         transform.Translate(slantDirection * speed * Time.deltaTime);
       }
     }
-
   }
 }
