@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/FootballField/Scenes/LandingOnField.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Welcome.unity
     guid: 57197bf37702e4573b947d120fb979bf
   - enabled: 1

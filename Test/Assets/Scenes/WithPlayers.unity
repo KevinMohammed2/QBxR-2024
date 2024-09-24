@@ -146,13 +146,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91468296}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6532815, y: -0.27059805, z: 0.6532815, w: 0.27059805}
-  m_LocalPosition: {x: -0.0509, y: 0.05, z: 0}
+  m_LocalRotation: {x: 0.45138434, y: -0.22197019, z: 0.64285994, w: 0.57767856}
+  m_LocalPosition: {x: -0.0509, y: 0.049999952, z: 0.0376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8477874613406422462}
-  m_LocalEulerAnglesHint: {x: 45, y: 90, z: 180}
+  m_LocalEulerAnglesHint: {x: 53.794, y: 33.254, z: 113.341}
 --- !u!1 &139655395
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,7 +404,6 @@ MonoBehaviour:
   yardDist: 1.75
   slantAngle: 35
   stopTime: 4
-
 --- !u!114 &159439636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12259,11 +12258,7 @@ PrefabInstance:
     - {fileID: 8364374124777742115, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 170836466}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &2137494856
 GameObject:
@@ -14664,17 +14659,17 @@ MonoBehaviour:
   m_AttachEaseInTime: 0.15
   m_MovementType: 0
   m_VelocityDamping: 1
-  m_VelocityScale: 2
+  m_VelocityScale: 1
   m_AngularVelocityDamping: 1
   m_AngularVelocityScale: 1
   m_TrackPosition: 1
   m_SmoothPosition: 1
-  m_SmoothPositionAmount: 8
-  m_TightenPosition: 0.1
+  m_SmoothPositionAmount: 20
+  m_TightenPosition: 1
   m_TrackRotation: 1
   m_SmoothRotation: 1
-  m_SmoothRotationAmount: 8
-  m_TightenRotation: 0.1
+  m_SmoothRotationAmount: 20
+  m_TightenRotation: 1
   m_TrackScale: 1
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
@@ -14696,7 +14691,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 3
+  m_ThrowVelocityScale: 4
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 0
@@ -14725,7 +14720,7 @@ PrefabInstance:
     - target: {fileID: 8614191748512114360, guid: f1981a6a9c598dd4da11755377fa25f2,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: FootballField
       objectReference: {fileID: 0}
     - target: {fileID: 8989204019429391362, guid: f1981a6a9c598dd4da11755377fa25f2,
         type: 3}
