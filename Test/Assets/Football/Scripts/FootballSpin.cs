@@ -8,12 +8,18 @@ public class FootballSpin : MonoBehaviour
   private Rigidbody rb;
   private bool isThrown = false;  // Tracks if the ball has been thrown
   public TextMeshProUGUI passResultText;
-  //private GameManager gameManager;
+
+  private bool passCompleted = false; // Track if the pass is completed
+
+  private XRGrabVelocityTracked grabInteractable; // Reference to the XR Grab Interactable
+
+  private Transform targetParent; // Store the BlackTeam's transform
+  private Vector3 relativePosition; // Store the football's relative position to the BlackTeam
 
   private void Start()
   {
     rb = GetComponent<Rigidbody>();  // Get the Rigidbody attached to the football
-    //gameManager = FindObjectOfType<GameManager>();  // Find the GameManager object in the scene
+    grabInteractable = GetComponent<XRGrabVelocityTracked>();  // Get the XR Grab Interactable component
   }
 
   private void FixedUpdate()
@@ -22,6 +28,13 @@ public class FootballSpin : MonoBehaviour
     if (isThrown)
     {
       rb.AddTorque(transform.right * spinForce * Time.fixedDeltaTime, ForceMode.Force);
+    }
+
+    // If pass completed, keep football at the correct relative position to the BlackTeam
+    if (passCompleted && targetParent != null)
+    {
+      // Keep football in the relative position
+      transform.position = targetParent.TransformPoint(relativePosition);
     }
   }
 
@@ -40,6 +53,9 @@ public class FootballSpin : MonoBehaviour
   // Called when the football hits the ground
   private void OnCollisionEnter(Collision collision)
   {
+    // If pass is already completed, ignore further collisions
+    if (passCompleted) return;
+
     // Check if the football collided with the ground
     // Incomplete Pass
     if (collision.gameObject.CompareTag("FootballField") || collision.gameObject.CompareTag("GoldTeam"))
@@ -47,7 +63,6 @@ public class FootballSpin : MonoBehaviour
       isThrown = false;  // Stop spinning when the football hits the ground
       passResultText.text = "Incomplete Pass!";
       Debug.Log("Incomplete Pass!");
-      //gameManager.ShowDialog("Incomplete Pass!");
     }
     // Complete Pass
     else if (collision.gameObject.CompareTag("BlackTeam"))
@@ -55,7 +70,35 @@ public class FootballSpin : MonoBehaviour
       isThrown = false;  // Stop spinning when the football hits the ground
       passResultText.text = "Pass Completed!";
       Debug.Log("Pass Completed!");
-      //gameManager.ShowDialog("Pass Completed!");
+
+      passCompleted = true;  // Mark pass as completed
+
+      // Disable interaction with the football
+      DisableInteraction();
+
+      // Set the target parent (BlackTeam)
+      targetParent = collision.transform;
+
+      // Calculate the relative position of the football to the BlackTeam at the moment of collision
+      relativePosition = targetParent.InverseTransformPoint(transform.position);
+
+      // Optionally, disable physics to stop the football from falling
+      rb.isKinematic = true;
+    }
+  }
+
+  // Disable the grab interactable and collider to prevent further interaction
+  private void DisableInteraction()
+  {
+    if (grabInteractable != null)
+    {
+      grabInteractable.enabled = false;  // Disable the grab interactable component
+    }
+
+    Collider ballCollider = GetComponent<Collider>();  // Get the football's collider
+    if (ballCollider != null)
+    {
+      ballCollider.enabled = false;  // Disable the collider (optional)
     }
   }
 }
