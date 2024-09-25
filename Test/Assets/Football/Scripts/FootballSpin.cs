@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 public class FootballSpin : MonoBehaviour
 {
   public float spinForce = 500f;  // Adjust this to control how fast the ball spins
   private Rigidbody rb;
   private bool isThrown = false;  // Tracks if the ball has been thrown
+  public TextMeshProUGUI passResultText;
   //private GameManager gameManager;
 
   private void Start()
@@ -39,15 +41,21 @@ public class FootballSpin : MonoBehaviour
   private void OnCollisionEnter(Collision collision)
   {
     // Check if the football collided with the ground
+    // Incomplete Pass
     if (collision.gameObject.CompareTag("FootballField") || collision.gameObject.CompareTag("GoldTeam"))
     {
       isThrown = false;  // Stop spinning when the football hits the ground
-      //gameManager.ShowDialog("Incomplete Pass!");  // End the game with a message
+      passResultText.text = "Incomplete Pass!";
+      Debug.Log("Incomplete Pass!");
+      //gameManager.ShowDialog("Incomplete Pass!");
     }
+    // Complete Pass
     else if (collision.gameObject.CompareTag("BlackTeam"))
     {
       isThrown = false;  // Stop spinning when the football hits the ground
-      //gameManager.ShowDialog("Pass Completed!");  // End the game with a message
+      passResultText.text = "Pass Completed!";
+      Debug.Log("Pass Completed!");
+      //gameManager.ShowDialog("Pass Completed!");
     }
   }
 }
