@@ -1,31 +1,44 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    bool caught = false;
+  public GameObject dialogPanel; // Reference to the game panel
+  public Text dialogText; // Reference to the text element in the game panel
+  public float dialogDistance = 2f; // Distance from the camera where the game appears
 
-    public float restartDelay = 1f;
+  private Camera mainCamera;
 
-    public GameObject completeLevelUI;
+  private void Start()
+  {
+    mainCamera = Camera.main; // Reference to the main camera
+  }
 
-    //public void CompleteLevel()
-    //{
-    //    completeLevelUI.SetActive(true);
-    //}
+  // Method to show the game with a specific message
+  public void ShowDialog(string message)
+  {
+    dialogText.text = message; // Set the message in the dialog text
+    dialogPanel.SetActive(true); // Show the dialog panel
 
-    public void EndGame()
+    // Position the dialog in front of the camera
+    PositionDialog();
+  }
+
+  // Method to hide the dialog
+  public void HideDialog()
+  {
+    dialogPanel.SetActive(false); // Hide the dialog panel
+  }
+
+  // Position the dialog in front of the camera
+  private void PositionDialog()
+  {
+    if (mainCamera != null)
     {
-        if (caught == false)
-        {
-            caught = true;
-            Debug.Log("GAME OVER");
-            Invoke("Restart", restartDelay);
-        }
+      // Calculate the position in front of the camera
+      Vector3 dialogPosition = mainCamera.transform.position + mainCamera.transform.forward * dialogDistance;
+      dialogPanel.transform.position = dialogPosition; // Set the dialog position
+      dialogPanel.transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward); // Face the camera
     }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+  }
 }
