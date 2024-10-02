@@ -5675,6 +5675,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1556457504}
+    - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1556457510}
   m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1001 &1519520462
 PrefabInstance:
@@ -6021,7 +6025,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1556457503}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef51e03ea003a4174bc79dd6acb1895b, type: 3}
   m_Name: 
@@ -6049,6 +6053,24 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+--- !u!114 &1556457510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556457503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c7f700a204743c3b5eaae6049926ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  yardDist: 10
+  shortCurlDist: 1.5
+  slantAngle: 45
+  cut: 0
+  stopTime: 4
 --- !u!1 &1579013952
 GameObject:
   m_ObjectHideFlags: 0
