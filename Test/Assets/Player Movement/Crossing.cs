@@ -3,30 +3,60 @@ using UnityEngine;
 public class Crossing : MonoBehaviour
 {
     public float speed = 5f;
-    public float curveDist = 8f;
+    public float firstAngleDist = 5f;  // Distance for the first angled movement
+    public float secondAngleDist = 2f; // Distance for the second angled movement
     private Vector3 startPos;
-    private bool isCurving = true;
-    private Vector3 curveDirection;
+    private int routePhase = 0;        // 0: first angle, 1: second angle, 2: horizontal
+    private Vector3 firstDirection;
+    private Vector3 secondDirection;
+    private Vector3 horizontalDirection;
 
     void Start()
     {
         startPos = transform.position;
-        curveDirection = (Quaternion.Euler(0, 45, 0) * Vector3.right).normalized; 
+
+        // Define the directions for each phase
+        firstDirection = (Quaternion.Euler(0, 30, 0) * Vector3.forward).normalized; // Slight angle up
+        secondDirection = (Quaternion.Euler(0, 45, 0) * Vector3.forward).normalized; // Slight angle cut
+        horizontalDirection = Vector3.right; // Horizontal to the right
     }
 
     void Update()
     {
-        if (isCurving)
+        float distCovered = Vector3.Distance(startPos, transform.position);
+
+        if (routePhase == 0)
         {
-            float distCovered = Vector3.Distance(startPos, transform.position);
-            if (distCovered < curveDist)
+            // Move up at a slight angle for a few yards
+            if (distCovered < firstAngleDist)
             {
-                transform.Translate(curveDirection * speed * Time.deltaTime);
+                transform.Translate(firstDirection * speed * Time.deltaTime, Space.World);
             }
             else
             {
-                isCurving = false;
+                // Transition to the second angled cut
+                routePhase = 1;
+                startPos = transform.position; // Reset startPos for the next phase
             }
+        }
+        else if (routePhase == 1)
+        {
+            // Cut at a slight angle for a yard or two
+            if (distCovered < secondAngleDist)
+            {
+                transform.Translate(secondDirection * speed * Time.deltaTime, Space.World);
+            }
+            else
+            {
+                // Transition to the horizontal movement
+                routePhase = 2;
+                startPos = transform.position; // Reset startPos for the next phase
+            }
+        }
+        else if (routePhase == 2)
+        {
+            // Move horizontally to the right
+            transform.Translate(horizontalDirection * speed * Time.deltaTime, Space.World);
         }
     }
 }

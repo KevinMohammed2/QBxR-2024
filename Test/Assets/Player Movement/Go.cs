@@ -9,7 +9,6 @@ public class Go: MonoBehaviour
     private Vector3 startPos;
     private float timeElasped = 0f;
     public float stopTime = 9f;
-    private Vector3 startPos;
     
     void Start()
     {
