@@ -1,7 +1,7 @@
 using GLTFast.Schema;
 using UnityEngine;
 
-public class Wheel : MonoBehaviour
+public class WheelRight : MonoBehaviour
 {
     public float speed = 5f;
     public float radius = 5f;  // Radius of the semicircle

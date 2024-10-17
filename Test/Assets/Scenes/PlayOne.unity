@@ -695,6 +695,18 @@ MonoBehaviour:
   yardDist: 1
   slantAngle: 40
   maxDistance: 7
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f07bcdd7-e364-46f0-8174-833adb19ce42
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &336426667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,17 +1826,17 @@ PrefabInstance:
     - target: {fileID: 4823725215870356727, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.5044
       objectReference: {fileID: 0}
     - target: {fileID: 4823725215870356727, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.5132
       objectReference: {fileID: 0}
     - target: {fileID: 4823725215870356727, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.5044
       objectReference: {fileID: 0}
     - target: {fileID: 4823725215870356727, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
@@ -1905,7 +1917,11 @@ PrefabInstance:
     - {fileID: 8364374124777742115, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 838422929}
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &788111584
 GameObject:
@@ -2111,6 +2127,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810021789}
   m_CullTransparentMesh: 1
+--- !u!1 &838422924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 744409222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &838422929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838422924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cce0f0d4040475582c7bca8ff14d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5.5
+  yardDist: 8
+  initialAngle: -35
+  increasedAngle: -60
+  stopTime: 5
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: e246af67-f8f9-4b2b-af11-e42233989985
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &874919884
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,6 +4057,18 @@ MonoBehaviour:
   yardDist: 2
   slantAngle: 40
   maxDistance: 50
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 305e7185-41b8-4b9c-b56f-2eb478b62335
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1202312658
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,6 +5358,18 @@ MonoBehaviour:
   inAngle: -90
   directionChange: 0
   stopTime: 7
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6f6cc0c8-4ed7-424f-8e3f-12b2c177d123
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1589715509
 GameObject:
   m_ObjectHideFlags: 0
@@ -5477,6 +5552,18 @@ MonoBehaviour:
   yardDist: 2
   slantAngle: -40
   maxDistance: 50
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 34dc82a9-d030-4a08-9d28-dac11ed57b8d
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1601554152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2,

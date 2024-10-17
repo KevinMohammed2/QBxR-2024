@@ -655,7 +655,7 @@ PrefabInstance:
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_Name
-      value: Corner Route WR
+      value: Short In Left
       objectReference: {fileID: 0}
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -687,14 +687,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 320706695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db29bba3060274c2392abb370ab676b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  newSpeed: 5
-  yardDist: 1
-  slantAngle: 40
-  maxDistance: 7
+  speed: 5
+  yardDist: 5
+  slantAngle: -90
+  ninetyCut: 0
+  stopTime: 4
 --- !u!1 &336426667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,7 +1532,7 @@ PrefabInstance:
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_Name
-      value: Right SlightGo
+      value: Curl
       objectReference: {fileID: 0}
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1879,7 +1879,7 @@ PrefabInstance:
     - target: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       propertyPath: m_Name
-      value: Slant WR
+      value: Deep In
       objectReference: {fileID: 0}
     - target: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
@@ -1905,7 +1905,11 @@ PrefabInstance:
     - {fileID: 8364374124777742115, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1688223774}
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &788111584
 GameObject:
@@ -3966,7 +3970,7 @@ PrefabInstance:
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_Name
-      value: Left SlightGo
+      value: Short In Right
       objectReference: {fileID: 0}
     - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -3998,14 +4002,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1124712677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db29bba3060274c2392abb370ab676b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  newSpeed: 5
-  yardDist: 2
-  slantAngle: 40
-  maxDistance: 50
+  speed: 5
+  yardDist: 5
+  slantAngle: -90
+  ninetyCut: 0
+  stopTime: 4
 --- !u!1 &1202312658
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,7 +5281,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2044253204}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1587716964
+--- !u!114 &1587716965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5286,15 +5290,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587716959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e684b90b69b640278f4db5e1e08cae6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a18ddb56b1ea4adbb5eecd7cfa2dca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preCutSpeed: 4.5
-  postCutSpeed: 6.5
-  yardDist: 7
-  inAngle: -90
-  directionChange: 0
-  stopTime: 7
+  speed: 5
+  radius: 3
+  arcDuration: 2
+  stopTime: 4
 --- !u!1 &1589715509
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,20 +5471,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595852970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db29bba3060274c2392abb370ab676b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 50c7f700a204743c3b5eaae6049926ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  newSpeed: 5.5
-  yardDist: 2
-  slantAngle: -40
-  maxDistance: 50
+  speed: 5
+  yardDist: 10
+  shortCurlDist: 1.5
+  slantAngle: -135
+  cut: 0
+  stopTime: 4
 --- !u!1 &1601554152 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9014170783809206332, guid: 895f6f3c2d334633b5800312285058d2,
     type: 3}
   m_PrefabInstance: {fileID: 1731298970}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1688223773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
+    type: 3}
+  m_PrefabInstance: {fileID: 744409222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1688223774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688223773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  yardDist: 10
+  slantAngle: -90
+  ninetyCut: 0
+  stopTime: 4
 --- !u!1 &1694373858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11617,7 +11643,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587716964}
+      addedObject: {fileID: 1587716965}
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &196977305468683332
 GameObject:

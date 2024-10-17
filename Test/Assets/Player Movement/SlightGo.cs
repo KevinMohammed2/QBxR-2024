@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem; // Required for Input System
 using UnityEngine;
 
 public class SlightGo : MonoBehaviour
@@ -12,44 +13,60 @@ public class SlightGo : MonoBehaviour
     private bool cut = true;          // Whether the player is in the cut phase
     private Vector3 startPos;         // Starting position of the player
     private float totalDistance = 0f; // Total distance covered
+    
+    private bool movementStarted = false; // Flag to track if movement has started
+    public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
 
     void Start()
     {
         startPos = transform.position; // Record the player's start position
+
+        // Make sure the A button input action is enabled
+        ButtonInput.action.Enable();
     }
 
     void Update()
     {
-        // Measure how far the player has moved from the start
-        float distCovered = Vector3.Distance(startPos, transform.position);
-        totalDistance = distCovered;
-
-        // Stop moving if the total distance covered exceeds the maxDistance
-        if (totalDistance >= maxDistance)
+        // Check if the 'A' button is pressed to start the movement
+        if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
         {
-            return; // Stop further execution to halt movement
+            movementStarted = true;
         }
 
-        if (cut)
+        // Run movement only if 'A' button has been pressed
+        if (movementStarted)
         {
-            // Create a direction vector for the slant based on the slant angle
-            Vector3 cutDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+            // Measure how far the player has moved from the start
+            float distCovered = Vector3.Distance(startPos, transform.position);
+            totalDistance = distCovered;
 
-            // If the player has not yet covered the slant distance, continue slanting
-            if (distCovered < yardDist)
+            // Stop moving if the total distance covered exceeds the maxDistance
+            if (totalDistance >= maxDistance)
             {
-                transform.Translate(cutDirection * speed * Time.deltaTime, Space.World);
+                return; // Stop further execution to halt movement
+            }
+
+            if (cut)
+            {
+                // Create a direction vector for the slant based on the slant angle
+                Vector3 cutDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+
+                // If the player has not yet covered the slant distance, continue slanting
+                if (distCovered < yardDist)
+                {
+                    transform.Translate(cutDirection * speed * Time.deltaTime, Space.World);
+                }
+                else
+                {
+                    // Transition to the "go" route after covering the slant distance
+                    cut = false;
+                }
             }
             else
             {
-                // Transition to the "go" route after covering the slant distance
-                cut = false;
+                // Move straight forward after the slant cut
+                transform.Translate(Vector3.forward * newSpeed * Time.deltaTime, Space.World);
             }
-        }
-        else
-        {
-            // Move straight forward after the slant cut
-            transform.Translate(Vector3.forward * newSpeed * Time.deltaTime, Space.World);
         }
     }
 }
