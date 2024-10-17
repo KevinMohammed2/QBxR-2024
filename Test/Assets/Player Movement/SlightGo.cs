@@ -13,7 +13,7 @@ public class SlightGo : MonoBehaviour
     private bool cut = true;          // Whether the player is in the cut phase
     private Vector3 startPos;         // Starting position of the player
     private float totalDistance = 0f; // Total distance covered
-    
+
     private bool movementStarted = false; // Flag to track if movement has started
     public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
 
