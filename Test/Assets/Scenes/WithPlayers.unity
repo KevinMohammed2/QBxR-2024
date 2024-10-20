@@ -284,9 +284,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f890c26c8827451890bfd749788ebe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: -4
   backwardAngle: 0
   stopTime: 5
+  ButtonInput:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 161aff25-fa6a-4b14-8fe4-ff8b7ba8adf6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &139655395
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +550,19 @@ MonoBehaviour:
   newSpeed: 5.1
   yardDist: 1.75
   slantAngle: 35
-  stopTime: 4
+  maxDistance: 30
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: ee8505e7-c903-43eb-a5a1-3b89f06ef111
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &159439636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: slantAngle
       value: -110
+      objectReference: {fileID: 0}
+    - target: {fileID: 267403174936297834, guid: bf3e2f9187d2849889ed93051e61ca00,
+        type: 3}
+      propertyPath: ButtonInput.m_Action.m_Name
+      value: Button Input
       objectReference: {fileID: 0}
     - target: {fileID: 2246179324003902935, guid: bf3e2f9187d2849889ed93051e61ca00,
         type: 3}
@@ -2193,9 +2223,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: -4
   backwardAngle: 60
   stopTime: 5
+  ButtonInput:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b02130ff-cad5-4a26-be4b-e07f313fb97c
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1001 &744409222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2293,6 +2336,11 @@ PrefabInstance:
         type: 3}
       propertyPath: slantAngle
       value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364374124777742115, guid: a582d8fed75624dab9702030cc78dee1,
+        type: 3}
+      propertyPath: ButtonInput.m_Action.m_Name
+      value: Button Input
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2600,9 +2648,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f890c26c8827451890bfd749788ebe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: -4
   backwardAngle: 0
   stopTime: 5
+  ButtonInput:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 08dcd0ab-1027-46bb-9291-27daf12088ef
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &810021789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +2821,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818502353}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 436a30fc1c92e4cc0b7efa8eded2cb9f, type: 3}
   m_Name: 
@@ -5213,7 +5274,19 @@ MonoBehaviour:
   newSpeed: 6
   yardDist: 2
   slantAngle: 40
-  stopTime: 4
+  maxDistance: 30
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 70dc0274-c523-4ee1-9d0b-f3b1a8100b84
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &1177806038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6771,6 +6844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: slantAngle
       value: -55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911857076267632657, guid: 3a3abc20ac3164c0bba359e3117613e7,
+        type: 3}
+      propertyPath: ButtonInput.m_Action.m_Name
+      value: Button Input
       objectReference: {fileID: 0}
     - target: {fileID: 8312609841749773382, guid: 3a3abc20ac3164c0bba359e3117613e7,
         type: 3}
