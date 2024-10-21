@@ -1559,7 +1559,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1595852971}
+      addedObject: {fileID: 1595852975}
   m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1 &547229427
 GameObject:
@@ -4017,7 +4017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   yardDist: 5
   slantAngle: -90
   ninetyCut: 0
@@ -5305,7 +5305,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2044253204}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1587716965
+--- !u!114 &1587716964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5314,20 +5314,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587716959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a18ddb56b1ea4adbb5eecd7cfa2dca6, type: 3}
+  m_Script: {fileID: 11500000, guid: d3082a6ab828746359814e90143cdb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  radius: -3
-  arcDuration: 2
-  stopTime: 4
+  speed: 4
+  initialDist: 5
   ButtonInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 32b4cd48-bd54-4d06-b567-4231fddc38e6
+      m_Id: d0900a66-42bc-4d30-8742-957253e78946
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5498,7 +5496,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 539306913}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1595852971
+--- !u!114 &1595852975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5507,22 +5505,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595852970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c7f700a204743c3b5eaae6049926ac, type: 3}
+  m_Script: {fileID: 11500000, guid: a733366b61d124b18b64046ba5d47dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  yardDist: 10
-  shortCurlDist: 1.5
-  slantAngle: -135
-  cut: 0
-  stopTime: 4
+  firstDist: 4
+  secondDist: 8
+  thirdDist: 4
+  slantAngle: 45
   ButtonInput:
     m_UseReference: 0
     m_Action:
-      m_Name: Button Input
+      m_Name: 
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 97e311eb-a86d-414f-a676-f296d29c5bd5
+      m_Id: 328ba371-be0e-4090-b98b-68f74a8ab8a9
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5549,13 +5546,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1688223773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
+  m_Script: {fileID: 11500000, guid: d221fe75d68d14cc6bb5961533813703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  yardDist: 10
-  slantAngle: -90
-  ninetyCut: 0
+  speed: 5.5
+  yardDist: 6
+  slantAngle: 45
+  directionChange: 0
   stopTime: 4
   ButtonInput:
     m_UseReference: 0
@@ -5563,7 +5560,7 @@ MonoBehaviour:
       m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: df96875b-d4f3-48f2-b0be-7b10bc1157ac
+      m_Id: 60cd0180-c6b6-4771-b23c-e0e68a48dab3
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -11703,7 +11700,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587716965}
+      addedObject: {fileID: 1587716964}
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &196977305468683332
 GameObject:

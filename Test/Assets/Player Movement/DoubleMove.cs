@@ -1,81 +1,81 @@
 using GLTFast.Schema;
 using UnityEngine;
+using UnityEngine.InputSystem; // Required for Input System
 
 public class DoubleMove : MonoBehaviour
 {
-  public float speed = 5f;
-  public float yardDist = 5f;
-  public float slantAngle = 45f;
-  public bool directionChange = false;
-  private Vector3 startPos;
-  private float timeElasped = 0f;
-  public float stopTime = 4f;
-  private bool firstSlant = false;
-  private bool secondSlant = false;
-  private Vector3 firstSlantPos;
-  private Vector3 secondSlantPos;
+    public float speed = 5f;
+    public float firstDist = 3f; // Distance for the first slant
+    public float secondDist = 5f; // Distance for the upward movement
+    public float thirdDist = 3f; // Distance for the second slant
+    public float slantAngle = 45f; // Angle for slant movements
+    private Vector3 startPos;
+    private int phase = 0; // Tracks the current phase of movement
+    private Vector3 phaseStartPos; // Start position for each phase
+    private bool movementStarted = false;
+    public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
 
-  void Start()
-  {
-    startPos = transform.position;
-  }
 
-// move forward till first slant 
-// slant 
-// move forward till second slant 
-// slant 
-// move forward till end 
-
-  // Update is called once per frame
-  void Update()
-  {
-  
-    if (!firstSlant)
+    void Start()
     {
-      if (Vector3.Distance(startPos, transform.position) < yardDist)
+        startPos = transform.position;
+        phaseStartPos = startPos;
+
+        ButtonInput.action.Enable();
+    }
+
+    void Update()
+    {
+
+      if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
       {
-        moveForward();
+          movementStarted = true;
       }
-      else
+
+      if (movementStarted)
       {
-        firstSlantMovement();
+
+        float distCovered = Vector3.Distance(phaseStartPos, transform.position);
+        
+        switch (phase)
+        {
+            case 0: // Slant right 45 degrees for 3 yards
+              if (distCovered < firstDist)
+              {
+                  Vector3 slantDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+                  transform.Translate(slantDirection * speed * Time.deltaTime);
+              }
+              else
+              {
+                  phase++;
+                  phaseStartPos = transform.position; // Update start position for the next phase
+              }
+              break;
+
+          case 1: // Move upwards for 5 yards
+              if (distCovered < secondDist)
+              {
+                  transform.Translate(Vector3.forward * speed * Time.deltaTime);
+              }
+              else
+              {
+                  phase++;
+                  phaseStartPos = transform.position; // Update start position for the next phase
+              }
+              break;
+
+          case 2: // Slant right again at 45 degrees for 3 yards
+              if (distCovered < thirdDist)
+              {
+                  Vector3 slantDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward;
+                  transform.Translate(slantDirection * speed * Time.deltaTime);
+              }
+              else
+              {
+                  phase++;
+              }
+              break;
+        }
       }
     }
-    else if (firstSlant && !secondSlant)
-    {
-      if (Vector3.Distance(firstSlantPos, transform.position) < yardDist)
-      {
-        moveForward();
-      }
-      else
-      {
-        secondSlantMovement();
-      }
-    }
-    else if (secondSlant)
-    {
-      moveForward();
-    }
-  }
-
-  void moveForward()
-  {
-    transform.Translate(Vector3.forward * speed * Time.deltaTime);
-  }
-
-  void firstSlantMovement()
-  {
-    firstSlantPos = transform.position;
-    Vector3 slantDirection = Quaternion.Euler(0, -slantAngle, 0) * Vector3.forward; // turn direction to the left 
-    transform.Translate(slantDirection * speed * Time.deltaTime); // move forward on the second slant
-    firstSlant = true;
-  }
-
-  void secondSlantMovement()
-  {
-    firstSlantPos = transform.position;
-    Vector3 slantDirection = Quaternion.Euler(0, slantAngle, 0) * Vector3.forward; // turn direction to the left 
-    transform.Translate(slantDirection * speed * Time.deltaTime); // move forward on the second slant
-    secondSlant = true;
-  }
 }

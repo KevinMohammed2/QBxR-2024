@@ -670,7 +670,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 320706696}
+      addedObject: {fileID: 320706701}
   m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1 &320706695 stripped
 GameObject:
@@ -678,7 +678,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 320706694}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &320706696
+--- !u!114 &320706701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -687,13 +687,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 320706695}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5373e9aed94974e3fb90412a35024f1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 99035867e3c8d418698fd9550598d883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
   yardDist: 5
-  slantAngle: -90
-  ninetyCut: 0
+  slantAngle: -45
   stopTime: 4
   ButtonInput:
     m_UseReference: 0
@@ -701,7 +700,7 @@ MonoBehaviour:
       m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: cfae77c9-830f-4feb-9ba0-860d9bc228e0
+      m_Id: 5adda265-d956-48e2-89b2-effaf7604598
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5305,7 +5304,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2044253204}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1587716965
+--- !u!114 &1587716960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5314,12 +5313,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1587716959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a18ddb56b1ea4adbb5eecd7cfa2dca6, type: 3}
+  m_Script: {fileID: 11500000, guid: 99cce0f0d4040475582c7bca8ff14d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  radius: 3
-  arcDuration: 2
+  speed: 6
+  yardDist: 10
+  initialAngle: -35
+  increasedAngle: -25
   stopTime: 4
   ButtonInput:
     m_UseReference: 0
@@ -5327,7 +5327,7 @@ MonoBehaviour:
       m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 9d8ae18d-de39-4876-8781-91769f8b451b
+      m_Id: a7fba0df-0cb3-42ae-b5ba-8f766e3c957c
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -5552,11 +5552,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d221fe75d68d14cc6bb5961533813703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 5.5
   yardDist: 8
   slantAngle: 45
   directionChange: 0
   stopTime: 4
+  ButtonInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Button Input
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 7d36b775-1a7e-42e7-8327-0729bb51e394
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1 &1694373858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11671,7 +11683,7 @@ PrefabInstance:
     - target: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       propertyPath: m_Name
-      value: Wheel Route
+      value: Slot Fade
       objectReference: {fileID: 0}
     - target: {fileID: 8364374124777742115, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
@@ -11691,7 +11703,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6911006078469822643, guid: a582d8fed75624dab9702030cc78dee1,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1587716965}
+      addedObject: {fileID: 1587716960}
   m_SourcePrefab: {fileID: 100100000, guid: a582d8fed75624dab9702030cc78dee1, type: 3}
 --- !u!1 &196977305468683332
 GameObject:
