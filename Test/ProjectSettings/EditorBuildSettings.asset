@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Samples/XR Interaction Toolkit/2.6.3/Starter Assets/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/FootballField/Scenes/LandingOnField.unity
-    guid: 319dafa5c80f29f428dc1e0d03f04177
   - enabled: 1
     path: Assets/Scenes/Welcome.unity
     guid: 57197bf37702e4573b947d120fb979bf
@@ -20,9 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlayTwo.unity
     guid: 17ae475eb86c24a29b22808cccb72ed1
-  - enabled: 0
-    path: Assets/Scenes/MorePlayers.unity
-    guid: c58ad8584789d46d2a94f9ce6ec2fa94
+  - enabled: 1
+    path: Assets/Scenes/PlayThree.unity
+    guid: f8a393890e51e4f35b763d8e7efeeeb5
+  - enabled: 1
+    path: Assets/Scenes/PlayFour.unity
+    guid: 4fdffd8bb5c8f40f0a32788e7f4dbe9c
+  - enabled: 1
+    path: Assets/Scenes/PlayFive.unity
+    guid: 40f25a823d8cb4b90b341db7198ed6d0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b6f7062a458c3ac478b1e04d425bcd78,
       type: 2}

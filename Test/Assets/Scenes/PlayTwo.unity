@@ -5318,13 +5318,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  radius: -3
+  radius: -4
   arcDuration: 2
   stopTime: 4
   ButtonInput:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
       m_Id: 32b4cd48-bd54-4d06-b567-4231fddc38e6

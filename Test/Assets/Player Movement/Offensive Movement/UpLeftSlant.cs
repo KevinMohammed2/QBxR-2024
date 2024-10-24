@@ -18,19 +18,19 @@ public class ModifiedRoute : MonoBehaviour
         startPos = transform.position;
 
         // Make sure the A button input action is enabled
-        ButtonInput.action.Enable();
+        // ButtonInput.action.Enable();
     }
 
     void Update()
     {
         // Check if the 'A' button is pressed to start the movement
-        if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-        {
-            movementStarted = true;
-        }
+        // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+        // {
+        //     movementStarted = true;
+        // }
 
         // Run movement only if 'A' button has been pressed
-        if (movementStarted)
+        // if (movementStarted)
         {
             timeElapsed += Time.deltaTime;
             if (timeElapsed < stopTime)
