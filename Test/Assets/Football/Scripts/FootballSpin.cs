@@ -7,14 +7,14 @@ public class FootballSpin : MonoBehaviour
   public float spinForce = 500f;  // Adjust this to control how fast the ball spins
   private Rigidbody rb;
   private bool isThrown = false;  // Tracks if the ball has been thrown
-  public TextMeshProUGUI passResultText;
-
   private bool passCompleted = false; // Track if the pass is completed
 
   private XRGrabVelocityTracked grabInteractable; // Reference to the XR Grab Interactable
 
   private Transform targetParent; // Store the BlackTeam's transform
   private Vector3 relativePosition; // Store the football's relative position to the BlackTeam
+
+  public NextScene nextScene; // Reference to the NextScene script
 
   private void Start()
   {
@@ -54,21 +54,24 @@ public class FootballSpin : MonoBehaviour
   private void OnCollisionEnter(Collision collision)
   {
     // If pass is already completed, ignore further collisions
-    if (passCompleted) return;
+    if (!isThrown || passCompleted) return;
 
     // Check if the football collided with the ground
     // Incomplete Pass
     if (collision.gameObject.CompareTag("FootballField") || collision.gameObject.CompareTag("GoldTeam"))
     {
       isThrown = false;  // Stop spinning when the football hits the ground
-      passResultText.text = "Incomplete Pass!";
       Debug.Log("Incomplete Pass!");
+
+      if (nextScene != null)
+      {
+        // Call the ShowResultPanel method in the NextScene script
+        nextScene.ShowResultPanel("Incomplete Pass!");
+      }
     }
-    // Complete Pass
     else if (collision.gameObject.CompareTag("BlackTeam"))
     {
       isThrown = false;  // Stop spinning when the football hits the ground
-      passResultText.text = "Pass Completed!";
       Debug.Log("Pass Completed!");
 
       passCompleted = true;  // Mark pass as completed
@@ -84,6 +87,12 @@ public class FootballSpin : MonoBehaviour
 
       // Optionally, disable physics to stop the football from falling
       rb.isKinematic = true;
+
+      if (nextScene != null)
+      {
+        // Call the ShowResultPanel method in the NextScene script
+        nextScene.ShowResultPanel("Pass Completed!");
+      }
     }
   }
 
