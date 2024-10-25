@@ -22,19 +22,19 @@ public class SlightGo : MonoBehaviour
         startPos = transform.position; // Record the player's start position
 
         // Make sure the A button input action is enabled
-        // ButtonInput.action.Enable();
+        ButtonInput.action.Enable();
     }
 
     void Update()
     {
         // Check if the 'A' button is pressed to start the movement
-        // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-        // {
-        //     movementStarted = true;
-        // }
+        if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+        {
+            movementStarted = true;
+        }
 
-        // // Run movement only if 'A' button has been pressed
-        // if (movementStarted)
+        // Run movement only if 'A' button has been pressed
+        if (movementStarted)
         {
             // Measure how far the player has moved from the start
             float distCovered = Vector3.Distance(startPos, transform.position);

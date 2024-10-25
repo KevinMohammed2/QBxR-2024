@@ -19,20 +19,20 @@ public class Slant : MonoBehaviour
     startPos = transform.position;
 
     // Make sure the A button input action is enabled
-    // ButtonInput.action.Enable();
+    ButtonInput.action.Enable();
   }
 
   // Update is called once per frame
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-    // {
-    //     movementStarted = true;
-    // }
+    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    {
+        movementStarted = true;
+    }
 
-    // // Run movement only if 'A' button has been pressed
-    // if (movementStarted)
+    // Run movement only if 'A' button has been pressed
+    if (movementStarted)
     {
       timeElasped += Time.deltaTime;
       if (timeElasped < stopTime)
