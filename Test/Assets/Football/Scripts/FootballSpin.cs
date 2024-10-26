@@ -88,6 +88,11 @@ public class FootballSpin : MonoBehaviour
       // Optionally, disable physics to stop the football from falling
       rb.isKinematic = true;
 
+      if (ScoreManager.Instance != null)
+      {
+        ScoreManager.Instance.AddScore();
+      }
+
       if (nextScene != null)
       {
         // Call the ShowResultPanel method in the NextScene script

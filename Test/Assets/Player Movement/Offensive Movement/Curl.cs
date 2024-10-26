@@ -20,19 +20,19 @@ public class Curl : MonoBehaviour
     startPos = transform.position;
 
     // Make sure the A button input action is enabled
-    // ButtonInput.action.Enable();
+    ButtonInput.action.Enable();
   }
 
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-    // {
-    //     movementStarted = true;
-    // }
+    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    {
+      movementStarted = true;
+    }
 
     // // Run movement only if 'A' button has been pressed
-    // if (movementStarted)
+    if (movementStarted)
     {
       timeElasped += Time.deltaTime;
       if (timeElasped < stopTime)
@@ -54,7 +54,7 @@ public class Curl : MonoBehaviour
         {
           Vector3 cutDirection = Quaternion.Euler(0, -slantAngle, 0) * Vector3.forward;
           float distCoverAfterCut = Vector3.Distance(cutStartPos, transform.position);
-          
+
           if (distCoverAfterCut < shortCurlDist)
           {
             transform.Translate(cutDirection * speed * Time.deltaTime); // move forward on the curl for only one yard
