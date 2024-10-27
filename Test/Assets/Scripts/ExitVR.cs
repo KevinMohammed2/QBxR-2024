@@ -11,7 +11,7 @@ public class ExitVR : MonoBehaviour
     // Add a listener to the button to call the ExitGame method when clicked
     if (ScoreManager.Instance != null)
     {
-      int finalScore = ScoreManager.Instance.GetScore();
+      int finalScore = ScoreManager.Instance.SaveScore();
       scoreText.text = $"Score: {finalScore} / 5";
     }
 
