@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class SlightUpCut : MonoBehaviour
+public class Flat : MonoBehaviour
 {
     public float speed = 5f;
     public float firstDist = 2f; // Distance for the first segment
