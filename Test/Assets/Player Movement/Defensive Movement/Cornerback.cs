@@ -25,7 +25,7 @@ public class CornerbackCoverage : MonoBehaviour
         startPos = transform.position;
 
         // Make sure the A button input action is enabled
-        ButtonInput.action.Enable();
+        // ButtonInput.action.Enable();
     }
 
     void Update()
@@ -33,13 +33,13 @@ public class CornerbackCoverage : MonoBehaviour
         // Increment the elapsed time
 
         // Check if the 'A' button is pressed to start the movement
-        if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-        {
-            movementStarted = true;
-        }
+        // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+        // {
+        //     movementStarted = true;
+        // }
 
-        // Run movement only if 'A' button has been pressed
-        if (movementStarted)
+        // // Run movement only if 'A' button has been pressed
+        // if (movementStarted)
         {
             timeElapsed += Time.deltaTime;
 
