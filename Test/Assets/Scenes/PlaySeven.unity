@@ -4590,7 +4590,7 @@ MonoBehaviour:
   distanceSecondPhase: 10
   startDelay: 1.5
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -4600,7 +4600,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1202312658
 GameObject:
   m_ObjectHideFlags: 0
