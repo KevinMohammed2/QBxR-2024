@@ -849,7 +849,7 @@ MonoBehaviour:
   newSpeed: 5
   yardDist: 1
   slantAngle: 40
-  maxDistance: 7
+  maxDistance: 20
   ButtonInput:
     m_UseReference: 1
     m_Action:

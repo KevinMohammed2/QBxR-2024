@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -643,7 +643,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   distanceSecondPhase: 12
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -1046,7 +1046,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &336426667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1150,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1159,7 +1160,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1842,8 +1843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: 100
-  yardDist: 5
+  coverageAngle: -90
+  yardDist: 7.5
   startDelay: 1.5
   ButtonInput:
     m_UseReference: 1
@@ -2213,10 +2214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: 100
-  yardDist: 5.5
-  startDelay: 1.25
+  speed: 2.5
+  coverageAngle: -150
+  yardDist: 3.5
+  startDelay: 0.5
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -3659,12 +3660,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.5
   angleFirstDirection: -45
-  angleSecondDirection: -60
+  angleSecondDirection: -85
   distanceFirstPhase: 6
   distanceSecondPhase: 10
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -3674,7 +3675,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &967567311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3805,7 +3807,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -3815,7 +3817,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -4473,10 +4475,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: -50
-  yardDist: 3.5
-  startDelay: 0.75
+  speed: 0
+  coverageAngle: 0
+  yardDist: 0
+  startDelay: 0
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -4509,8 +4511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: 100
-  yardDist: 8
+  coverageAngle: -110
+  yardDist: 5
   startDelay: 1.25
   ButtonInput:
     m_UseReference: 1
@@ -5816,7 +5818,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -5826,7 +5828,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -5901,7 +5903,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2023285116}
+      addedObject: {fileID: 2023285111}
   m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1 &1587716959 stripped
 GameObject:
@@ -5930,7 +5932,7 @@ MonoBehaviour:
   distanceThirdPhase: 7
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -5940,7 +5942,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1589715509
 GameObject:
   m_ObjectHideFlags: 0
@@ -6128,10 +6131,10 @@ MonoBehaviour:
   angleFirstDirection: 0
   angleSecondDirection: 90
   distanceFirstPhase: 4
-  distanceSecondPhase: 7
+  distanceSecondPhase: 9
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -6141,7 +6144,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1694373858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11907,7 +11911,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -12209,10 +12213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: 125
-  yardDist: 3.5
-  startDelay: 0
+  speed: 2
+  coverageAngle: 90
+  yardDist: 1.5
+  startDelay: 0.25
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -12330,7 +12334,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1584564231}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2023285116
+--- !u!114 &2023285111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12339,22 +12343,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2023285110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fcfa08122e74124a900e74284acae8, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f446cf03cc14ed785a650cfb6de50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  angleFirstDirection: 90
-  angleSecondDirection: -100
-  distanceFirstPhase: 3
-  distanceSecondPhase: 7
-  startDelay: 0
+  speed: 2.75
+  angleFirstDirection: 10
+  angleSecondDirection: -110
+  distanceFirstPhase: 2.5
+  distanceSecondPhase: 4.65
+  startDelay: 0.5
   ButtonInput:
     m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 270f6317-ead1-4934-a5de-f163cdd33a5f
+      m_Id: a3a6135c-036a-4efd-9fe1-9e12934db6fb
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -12580,9 +12584,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: -5
-  yardDist: 4.75
-  startDelay: 1.15
+  coverageAngle: 10
+  yardDist: 2.6
+  startDelay: 1.75
   ButtonInput:
     m_UseReference: 1
     m_Action:

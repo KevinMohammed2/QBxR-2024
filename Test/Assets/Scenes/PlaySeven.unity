@@ -233,7 +233,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1194175032}
+      addedObject: {fileID: 1194175037}
   m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1001 &71113860
 PrefabInstance:
@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -643,7 +643,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1036,7 +1036,7 @@ MonoBehaviour:
   distanceSecondPhase: 15
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -1046,7 +1046,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &336426667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1150,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1159,7 +1160,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -1842,9 +1843,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: 100
-  yardDist: 5
-  startDelay: 1.5
+  coverageAngle: -150
+  yardDist: 6
+  startDelay: 1.25
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -2195,41 +2196,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1107317932}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &727971554 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
-    type: 3}
-  m_PrefabInstance: {fileID: 1900101129}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &727971555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727971554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: 100
-  yardDist: 5.5
-  startDelay: 1.25
-  ButtonInput:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Button Input
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 937167f9-c94b-49b5-94cb-93e4e86010f8
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
 --- !u!1001 &744409222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3769,7 +3735,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -3779,7 +3745,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -4552,7 +4518,7 @@ MonoBehaviour:
   distanceSecondPhase: 6
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -4562,7 +4528,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1143697475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
@@ -4581,9 +4548,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: -50
-  yardDist: 3.5
+  speed: 2.5
+  coverageAngle: 35
+  yardDist: 4
   startDelay: 0.75
   ButtonInput:
     m_UseReference: 1
@@ -4604,7 +4571,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 42033393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1194175032
+--- !u!114 &1194175037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4613,26 +4580,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1194175031}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4513140443cf4319abc5c82c1ed6f34, type: 3}
+  m_Script: {fileID: 11500000, guid: c8f446cf03cc14ed785a650cfb6de50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  coverageAngle: 100
-  yardDist: 8
-  startDelay: 1.25
+  speed: 3.5
+  angleFirstDirection: 160
+  angleSecondDirection: 100
+  distanceFirstPhase: 2.25
+  distanceSecondPhase: 10
+  startDelay: 1.5
   ButtonInput:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Button Input
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 937167f9-c94b-49b5-94cb-93e4e86010f8
+      m_Id: c7945365-e9f4-4b4d-85b5-36174ccdffaf
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
-      type: 3}
+    m_Reference: {fileID: 0}
 --- !u!1 &1202312658
 GameObject:
   m_ObjectHideFlags: 0
@@ -5924,7 +5892,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -5934,7 +5902,7 @@ PrefabInstance:
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
         type: 3}
@@ -6035,7 +6003,7 @@ MonoBehaviour:
   ninetyCut: 0
   stopTime: 4.15
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -6045,7 +6013,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1589715509
 GameObject:
   m_ObjectHideFlags: 0
@@ -6236,7 +6205,7 @@ MonoBehaviour:
   distanceSecondPhase: 1.25
   startDelay: 0
   ButtonInput:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Button Input
       m_Type: 0
@@ -6246,7 +6215,8 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 3794095785845349684, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!1 &1694373858
 GameObject:
   m_ObjectHideFlags: 0
@@ -11986,119 +11956,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1880968183}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1900101129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988151316528230449, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5156120284408071852, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: ba269b93b75a14ae59bcd78158e667e4, type: 2}
-    - target: {fileID: 5482877779555341890, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: stopTime
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5482877779555341890, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: yardDist
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5482877779555341890, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_Name
-      value: CB3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      propertyPath: m_TagString
-      value: GoldTeam
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5482877779555341890, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6832601870925290424, guid: c24c1124956c146239a9ddd855f69b34,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 727971555}
-  m_SourcePrefab: {fileID: 100100000, guid: c24c1124956c146239a9ddd855f69b34, type: 3}
 --- !u!1 &1917198433
 GameObject:
   m_ObjectHideFlags: 0
@@ -12315,9 +12172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: 125
-  yardDist: 3.5
-  startDelay: 0
+  coverageAngle: 15
+  yardDist: 4
+  startDelay: 0.35
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -12350,11 +12207,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  angleFirstDirection: 90
-  angleSecondDirection: -100
-  distanceFirstPhase: 3
-  distanceSecondPhase: 7
-  startDelay: 0
+  angleFirstDirection: 0
+  angleSecondDirection: -90
+  distanceFirstPhase: 4
+  distanceSecondPhase: 2
+  startDelay: 0.25
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -12587,9 +12444,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  coverageAngle: -5
-  yardDist: 4.75
-  startDelay: 1.15
+  coverageAngle: -15
+  yardDist: 5
+  startDelay: 0.35
   ButtonInput:
     m_UseReference: 1
     m_Action:
@@ -16107,7 +15964,6 @@ SceneRoots:
   - {fileID: 1124712676}
   - {fileID: 71113860}
   - {fileID: 42033393}
-  - {fileID: 1900101129}
   - {fileID: 337960665}
   - {fileID: 197371011}
   - {fileID: 1005635767}
