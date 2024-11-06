@@ -16,9 +16,6 @@ public class FootballSpin : MonoBehaviour
 
   public NextScene nextScene; // Reference to the NextScene script
 
-  SlightGo slightGoInstance = new SlightGo();
-
-  public float playerValue = slightGoInstance.gradeValue;
 
   private void Start()
   {
@@ -57,6 +54,10 @@ public class FootballSpin : MonoBehaviour
   // Called when the football hits the ground
   private void OnCollisionEnter(Collision collision)
   {
+
+    SlightGo slightGoInstance = new SlightGo();
+    float playerValue = slightGoInstance.gradeValue;
+
     // If pass is already completed, ignore further collisions
     if (!isThrown || passCompleted) return;
 
