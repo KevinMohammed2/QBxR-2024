@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem; // Required for Input System
 using UnityEngine;
 
+/*
+
+    For Grading: 
+    - Public Variable gradeValue = 0
+    - We set each of the players to a score
+    - After COMPLETION, return the score on each route to the FootballSpin.cs file
+
+*/
+
+
 public class SlightGo : MonoBehaviour
 {
     public float speed = 2f;          // Speed during the slant cut
@@ -10,6 +20,7 @@ public class SlightGo : MonoBehaviour
     public float yardDist = 10f;      // Distance to cut before going straight (set to 10 units as example)
     public float slantAngle = 40f;    // Angle of the initial cut
     public float maxDistance = 30f;   // Maximum distance before stopping the movement
+    public float gradeValue = 0;      // Value of the score based on what we provide: Openness, target 1, etc... 
     private bool cut = true;          // Whether the player is in the cut phase
     private Vector3 startPos;         // Starting position of the player
     private float totalDistance = 0f; // Total distance covered

@@ -16,6 +16,10 @@ public class FootballSpin : MonoBehaviour
 
   public NextScene nextScene; // Reference to the NextScene script
 
+  SlightGo slightGoInstance = new SlightGo();
+
+  public float playerValue = slightGoInstance.gradeValue;
+
   private void Start()
   {
     rb = GetComponent<Rigidbody>();  // Get the Rigidbody attached to the football
@@ -73,6 +77,9 @@ public class FootballSpin : MonoBehaviour
     {
       isThrown = false;  // Stop spinning when the football hits the ground
       Debug.Log("Pass Completed!");
+
+      // Print the value of the Player Score
+      Debug.Log("Player Score = " + playerValue);
 
       passCompleted = true;  // Mark pass as completed
 
