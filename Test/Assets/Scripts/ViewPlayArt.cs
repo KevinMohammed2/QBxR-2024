@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ViewPlayArt : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class ViewPlayArt : MonoBehaviour
   public string newCanvasText = "Play Name"; // The text to display when the button is clicked
   public GameObject parentCanvas;       // Reference to the Parent Canvas GameObject
 
+  public XRGrabInteractable footballGrabInteractable; // Reference to the XRGrabInteractable component on the football
+  private bool isFootballInteractable = false;
+
   private void Start()
   {
     // Ensure the image starts inactive
@@ -17,6 +21,11 @@ public class ViewPlayArt : MonoBehaviour
 
     // Add a listener to the button click event
     button.onClick.AddListener(OnButtonClick);
+
+    if (footballGrabInteractable != null)
+    {
+      footballGrabInteractable.enabled = false;
+    }
   }
 
   // Method to be called when the button is clicked
@@ -26,6 +35,15 @@ public class ViewPlayArt : MonoBehaviour
     button.gameObject.SetActive(false);
 
     // Change the text on the parent canvas
+
+    if (footballGrabInteractable != null && !isFootballInteractable)
+    {
+      // Enable the XRGrabInteractable component, making the football interactable
+      footballGrabInteractable.enabled = true;
+      isFootballInteractable = true; // Update flag to prevent re-enabling
+      Debug.Log("Football is now interactable.");
+    }
+
     if (canvasText != null)
     {
       canvasText.text = newCanvasText;

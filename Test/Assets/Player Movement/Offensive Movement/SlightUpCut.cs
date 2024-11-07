@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class SlightUpCut : MonoBehaviour
+public class SlightUpCut : MonoBehaviour, IRoute
 {
   public float speed = 5f;
   public float firstDist = 2f; // Distance for the first segment
@@ -14,6 +14,9 @@ public class SlightUpCut : MonoBehaviour
   private bool movementStarted = false; // Flag to track if movement has started
   private int phase = 0; // Track which phase of the movement we are in
 
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
+
   void Start()
   {
     startPos = transform.position;
@@ -25,7 +28,7 @@ public class SlightUpCut : MonoBehaviour
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

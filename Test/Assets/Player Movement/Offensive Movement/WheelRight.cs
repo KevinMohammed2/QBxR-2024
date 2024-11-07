@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
 
-public class WheelRight : MonoBehaviour
+public class WheelRight : MonoBehaviour, IRoute
 {
   public float speed = 5f;
   public float radius = 5f;  // Radius of the semicircle
@@ -15,6 +15,9 @@ public class WheelRight : MonoBehaviour
   private Vector3 lastPosition;
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
   private bool movementStarted = false; // Flag to track if movement has started
+
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
 
   void Start()
   {
@@ -28,7 +31,7 @@ public class WheelRight : MonoBehaviour
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

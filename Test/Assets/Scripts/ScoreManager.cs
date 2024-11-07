@@ -1,13 +1,29 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
+using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
   [DllImport("__Internal")]
-  private static extern void SaveScoreToLocalStorage(int score);
+  private static extern void SaveScoreToLocalStorage(List<PlayScore> scores);
 
   public static ScoreManager Instance { get; private set; } // Singleton instance
-  private int score = 0; // Tracks the number of completed passes
+
+  [System.Serializable]
+  public class PlayScore
+  {
+    public int playDifficulty;  // Difficulty of the play
+    public float score;         // Score for the play
+
+    public PlayScore(int difficulty, float scoreValue)
+    {
+      playDifficulty = difficulty;
+      score = scoreValue;
+    }
+  }
+
+  // List to hold scores for each play
+  private List<PlayScore> scores = new List<PlayScore>();
 
   private void Awake()
   {
@@ -23,32 +39,33 @@ public class ScoreManager : MonoBehaviour
     }
   }
 
-  // Method to add score for a completed pass
-  public void AddScore()
+  // Method to add a score for a completed play with difficulty
+  public void AddScore(int playDifficulty, float scoreValue)
   {
-    score += 1;
+    scores.Add(new PlayScore(playDifficulty, scoreValue));
   }
 
-  // Get the current score
-  public int GetScore()
+  // Get all scores
+  public List<PlayScore> GetScores()
   {
-    return score;
+    return scores;
   }
 
-  public int SaveScore()
+  // Reset scores (optional, for replaying)
+  public void ResetScores()
   {
-    int finalScore = GetScore();
+    scores.Clear();
+  }
+
+  public void SaveScore()
+  {
+    foreach (var playScore in scores)
+    {
+      Debug.Log("Final Scores: " + playScore.playDifficulty + " - " + playScore.score);
+    }
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-        SaveScoreToLocalStorage(finalScore);  // Call the JS function to save the score
+        SaveScoreToLocalStorage(scores);  // Call the JS function to save the score
 #endif
-
-    return finalScore;
-  }
-
-  // Reset the score (optional, for replaying)
-  public void ResetScore()
-  {
-    score = 0;
   }
 }

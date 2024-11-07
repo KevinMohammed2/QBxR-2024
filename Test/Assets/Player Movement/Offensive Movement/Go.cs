@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem; // Required for Input System
 using UnityEngine;
 
-public class Go : MonoBehaviour
+public class Go : MonoBehaviour, IRoute
 {
   public float speed = 5f;
   public float yardDist = 5f;
@@ -13,6 +13,9 @@ public class Go : MonoBehaviour
 
   private bool movementStarted = false; // Flag to track if movement has started
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
+
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
 
   void Start()
   {
@@ -27,7 +30,7 @@ public class Go : MonoBehaviour
 
     timeElasped += Time.deltaTime;
 
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class ModifiedRoute : MonoBehaviour
+public class ModifiedRoute : MonoBehaviour, IRoute
 {
   public float speed = 5f;
   public float yardDist = 5f; // Set yard distance to 5 for each segment
@@ -12,6 +12,9 @@ public class ModifiedRoute : MonoBehaviour
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
   private bool movementStarted = false; // Flag to track if movement has started
   private int phase = 0; // Track which phase of the movement we are in
+
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
 
   void Start()
   {
@@ -24,7 +27,7 @@ public class ModifiedRoute : MonoBehaviour
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

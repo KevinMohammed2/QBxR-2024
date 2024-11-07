@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class MoveAtAngle : MonoBehaviour
+public class MoveAtAngle : MonoBehaviour, IRoute
 {
   public float speed = 5f; // Movement speed
   public float yardDist = 10f; // Distance in yards
@@ -11,6 +11,9 @@ public class MoveAtAngle : MonoBehaviour
   public float stopTime = 4f; // Maximum time allowed for movement
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
   private bool movementStarted = false; // Flag to track if movement has started
+
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
 
   void Start()
   {
@@ -23,7 +26,7 @@ public class MoveAtAngle : MonoBehaviour
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }
