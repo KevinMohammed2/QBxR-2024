@@ -28,7 +28,7 @@ public class ZoneCoverage : MonoBehaviour
     // Increment the elapsed time
 
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

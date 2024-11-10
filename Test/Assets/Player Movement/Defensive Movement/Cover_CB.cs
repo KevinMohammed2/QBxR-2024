@@ -25,7 +25,7 @@ public class Cover_CB : MonoBehaviour
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

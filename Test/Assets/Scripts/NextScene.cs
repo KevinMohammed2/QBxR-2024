@@ -8,8 +8,6 @@ public class NextScene : MonoBehaviour
   public Text resultText;        // Text element to show "Complete" or "Incomplete"
   public Button nextPlayButton;  // Button to proceed to the next play
 
-  private bool playEnded = false; // Flag to check if play is over
-
   void Start()
   {
     // Ensure the result panel and button are not active at the start

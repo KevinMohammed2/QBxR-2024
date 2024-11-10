@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class CornerbackCoverage : MonoBehaviour
+public class CornerbackCoverage : MonoBehaviour, IRoute
 {
   public float speed = 5f;               // Speed of movement
   public float angleFirstDirection = -45f; // Angle for the first direction
@@ -19,6 +19,9 @@ public class CornerbackCoverage : MonoBehaviour
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
   private bool movementStarted = false;   // Flag to track if movement has started
 
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
+
   void Start()
   {
     // Record the starting position of the free safety
@@ -33,7 +36,7 @@ public class CornerbackCoverage : MonoBehaviour
     // Increment the elapsed time
 
     // Check if the 'A' button is pressed to start the movement
-    if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
     {
       movementStarted = true;
     }

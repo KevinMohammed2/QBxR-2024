@@ -1,9 +1,10 @@
 var WebGLBridge = {
-  SaveScoreToLocalStorage: function (score) {
-    // Convert the integer score to a string for localStorage
-    localStorage.setItem("score", score.toString());
+  SendScores: function (difficulty1Score, difficulty2Score, difficulty3Score) {
+    localStorage.setItem("score1", difficulty1Score.toString());
+    localStorage.setItem("score2", difficulty2Score.toString());
+    localStorage.setItem("score3", difficulty3Score.toString());
 
-    // Dispatch a custom event to notify React of the update
+
     var event = new Event("scoreUpdated");
     window.dispatchEvent(event);
   },

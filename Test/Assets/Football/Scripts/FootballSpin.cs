@@ -89,6 +89,12 @@ public class FootballSpin : MonoBehaviour
     if (!isThrown || passCompleted)
       return;
 
+    if (!playStarted)
+    {
+      isThrown = false;
+      return;
+    }
+
     string sceneName = SceneManager.GetActiveScene().name;
     switch (sceneName)
     {
@@ -107,6 +113,21 @@ public class FootballSpin : MonoBehaviour
       case "PlayFive":
         playDifficulty = 3;
         break;
+      case "PlaySix":
+        playDifficulty = 2;
+        break;
+      case "PlaySeven":
+        playDifficulty = 1;
+        break;
+      case "PlayEight":
+        playDifficulty = 2;
+        break;
+      case "PlayNine":
+        playDifficulty = 3;
+        break;
+      case "PlayTen":
+        playDifficulty = 2;
+        break;
     }
 
     if (
@@ -115,8 +136,6 @@ public class FootballSpin : MonoBehaviour
     )
     {
       isThrown = false;
-      Debug.Log("Incomplete Pass!");
-      DisableInteraction();
 
       if (ScoreManager.Instance != null)
       {
@@ -131,14 +150,12 @@ public class FootballSpin : MonoBehaviour
     else if (collision.gameObject.CompareTag("BlackTeam"))
     {
       isThrown = false;
-      Debug.Log("Pass Completed!");
 
       IRoute route = collision.gameObject.GetComponent<IRoute>();
       float playerScore = 0f;
       if (route != null)
       {
         playerScore = route.playerScore;
-        Debug.Log("Pass Completed! Player Score: " + playerScore);
       }
       else
       {

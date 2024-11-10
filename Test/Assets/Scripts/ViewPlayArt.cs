@@ -41,7 +41,6 @@ public class ViewPlayArt : MonoBehaviour
       // Enable the XRGrabInteractable component, making the football interactable
       footballGrabInteractable.enabled = true;
       isFootballInteractable = true; // Update flag to prevent re-enabling
-      Debug.Log("Football is now interactable.");
     }
 
     if (canvasText != null)
