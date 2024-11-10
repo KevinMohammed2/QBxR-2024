@@ -1,25 +1,32 @@
-using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class FootballSpin : MonoBehaviour
 {
-  public float spinForce = 500f;  // Adjust this to control how fast the ball spins
+  public float spinForce = 500f;
+  public float timeToThrow = 5f;
+  private float timeElapsed = 0f;
   private Rigidbody rb;
-  private bool isThrown = false;  // Tracks if the ball has been thrown
-  private bool passCompleted = false; // Track if the pass is completed
+  private bool isThrown = false;
+  private bool passCompleted = false;
+  private bool playStarted = false;
 
-  private XRGrabVelocityTracked grabInteractable; // Reference to the XR Grab Interactable
+  private XRGrabVelocityTracked grabInteractable;
+  private int playDifficulty = 0;
+  public InputActionProperty ButtonInput;
 
-  private Transform targetParent; // Store the BlackTeam's transform
-  private Vector3 relativePosition; // Store the football's relative position to the BlackTeam
+  private Transform targetParent;
+  private Vector3 relativePosition;
 
-  public NextScene nextScene; // Reference to the NextScene script
+  public NextScene nextScene;
 
   private void Start()
   {
-    rb = GetComponent<Rigidbody>();  // Get the Rigidbody attached to the football
-    grabInteractable = GetComponent<XRGrabVelocityTracked>();  // Get the XR Grab Interactable component
+    rb = GetComponent<Rigidbody>();
+    grabInteractable = GetComponent<XRGrabVelocityTracked>();
   }
 
   private void FixedUpdate()
@@ -30,10 +37,34 @@ public class FootballSpin : MonoBehaviour
       rb.AddTorque(transform.right * spinForce * Time.fixedDeltaTime, ForceMode.Force);
     }
 
-    // If pass completed, keep football at the correct relative position to the BlackTeam
+    if (!playStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
+    {
+      timeElapsed = 0f;
+      playStarted = true;
+    }
+
+    if (!isThrown && FootballHoldManager.Instance.IsFootballHeld())
+    {
+      timeElapsed += Time.fixedDeltaTime;
+
+      if (playStarted && timeElapsed >= timeToThrow)
+      {
+        DisableInteraction();
+
+        if (ScoreManager.Instance != null)
+        {
+          ScoreManager.Instance.AddScore(playDifficulty, 0);
+        }
+
+        if (nextScene != null)
+        {
+          nextScene.ShowResultPanel("You took too long!");
+        }
+      }
+    }
+
     if (passCompleted && targetParent != null)
     {
-      // Keep football in the relative position
       transform.position = targetParent.TransformPoint(relativePosition);
     }
   }
@@ -41,56 +72,110 @@ public class FootballSpin : MonoBehaviour
   // Called when the ball is released/thrown
   public void OnSelectExited(SelectExitEventArgs args)
   {
-    isThrown = true;  // Start spinning when the ball is released
+    isThrown = true;
+    FootballHoldManager.Instance.SetFootballHeldStatus(false);
   }
 
   // Called when the ball is grabbed again
   public void OnSelectEntered(SelectEnterEventArgs args)
   {
-    isThrown = false;  // Stop spinning when grabbed again
+    isThrown = false;
+    FootballHoldManager.Instance.SetFootballHeldStatus(true);
   }
 
   // Called when the football hits the ground
   private void OnCollisionEnter(Collision collision)
   {
-    // If pass is already completed, ignore further collisions
-    if (!isThrown || passCompleted) return;
+    if (!isThrown || passCompleted)
+      return;
 
-    // Check if the football collided with the ground
-    // Incomplete Pass
-    if (collision.gameObject.CompareTag("FootballField") || collision.gameObject.CompareTag("GoldTeam"))
+    if (!playStarted)
     {
-      isThrown = false;  // Stop spinning when the football hits the ground
-      Debug.Log("Incomplete Pass!");
+      isThrown = false;
+      return;
+    }
+
+    string sceneName = SceneManager.GetActiveScene().name;
+    switch (sceneName)
+    {
+      case "PlayOne":
+        playDifficulty = 3;
+        break;
+      case "PlayTwo":
+        playDifficulty = 1;
+        break;
+      case "PlayThree":
+        playDifficulty = 3;
+        break;
+      case "PlayFour":
+        playDifficulty = 2;
+        break;
+      case "PlayFive":
+        playDifficulty = 3;
+        break;
+      case "PlaySix":
+        playDifficulty = 2;
+        break;
+      case "PlaySeven":
+        playDifficulty = 1;
+        break;
+      case "PlayEight":
+        playDifficulty = 2;
+        break;
+      case "PlayNine":
+        playDifficulty = 3;
+        break;
+      case "PlayTen":
+        playDifficulty = 2;
+        break;
+    }
+
+    if (
+        collision.gameObject.CompareTag("FootballField")
+        || collision.gameObject.CompareTag("GoldTeam")
+    )
+    {
+      isThrown = false;
+
+      if (ScoreManager.Instance != null)
+      {
+        ScoreManager.Instance.AddScore(playDifficulty, 0);
+      }
 
       if (nextScene != null)
       {
-        // Call the ShowResultPanel method in the NextScene script
         nextScene.ShowResultPanel("Incomplete Pass!");
       }
     }
     else if (collision.gameObject.CompareTag("BlackTeam"))
     {
-      isThrown = false;  // Stop spinning when the football hits the ground
-      Debug.Log("Pass Completed!");
+      isThrown = false;
 
-      passCompleted = true;  // Mark pass as completed
+      IRoute route = collision.gameObject.GetComponent<IRoute>();
+      float playerScore = 0f;
+      if (route != null)
+      {
+        playerScore = route.playerScore;
+      }
+      else
+      {
+        Debug.LogWarning("No IRoute component found on collided BlackTeam object.");
+      }
 
-      // Disable interaction with the football
+      passCompleted = true;
       DisableInteraction();
 
-      // Set the target parent (BlackTeam)
       targetParent = collision.transform;
-
-      // Calculate the relative position of the football to the BlackTeam at the moment of collision
       relativePosition = targetParent.InverseTransformPoint(transform.position);
 
-      // Optionally, disable physics to stop the football from falling
       rb.isKinematic = true;
+      if (ScoreManager.Instance != null)
+      {
+        ScoreManager.Instance.AddScore(playDifficulty, playerScore);
+      }
 
       if (nextScene != null)
       {
-        // Call the ShowResultPanel method in the NextScene script
         nextScene.ShowResultPanel("Pass Completed!");
       }
     }
@@ -101,13 +186,13 @@ public class FootballSpin : MonoBehaviour
   {
     if (grabInteractable != null)
     {
-      grabInteractable.enabled = false;  // Disable the grab interactable component
+      grabInteractable.enabled = false; // Disable the grab interactable component
     }
 
-    Collider ballCollider = GetComponent<Collider>();  // Get the football's collider
+    Collider ballCollider = GetComponent<Collider>(); // Get the football's collider
     if (ballCollider != null)
     {
-      ballCollider.enabled = false;  // Disable the collider (optional)
+      ballCollider.enabled = false; // Disable the collider (optional)
     }
   }
 }

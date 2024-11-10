@@ -2,7 +2,7 @@ using GLTFast.Schema;
 using UnityEngine;
 using UnityEngine.InputSystem; // Required for Input System
 
-public class Slant : MonoBehaviour
+public class Slant : MonoBehaviour, IRoute
 {
   public float speed = 5f;
   public float yardDist = 5f;
@@ -14,25 +14,28 @@ public class Slant : MonoBehaviour
   public InputActionProperty ButtonInput; // Assign the input action for 'A' button in the inspector
   private bool movementStarted = false; // Flag to track if movement has started
 
+  public float playerScore = 1f;    // Property to get the player score
+  float IRoute.playerScore => playerScore;
+
   void Start()
   {
     startPos = transform.position;
 
     // Make sure the A button input action is enabled
-    // ButtonInput.action.Enable();
+    ButtonInput.action.Enable();
   }
 
   // Update is called once per frame
   void Update()
   {
     // Check if the 'A' button is pressed to start the movement
-    // if (!movementStarted && ButtonInput.action.WasPressedThisFrame())
-    // {
-    //     movementStarted = true;
-    // }
+    if (!movementStarted && FootballHoldManager.Instance.IsFootballHeld() && ButtonInput.action.WasPressedThisFrame())
+    {
+      movementStarted = true;
+    }
 
-    // // Run movement only if 'A' button has been pressed
-    // if (movementStarted)
+    // Run movement only if 'A' button has been pressed
+    if (movementStarted)
     {
       timeElasped += Time.deltaTime;
       if (timeElasped < stopTime)
