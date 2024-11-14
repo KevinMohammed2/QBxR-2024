@@ -1414,7 +1414,7 @@ PrefabInstance:
     - target: {fileID: 2312402698528158554, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2312402698528158554, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
         type: 3}
@@ -1424,7 +1424,7 @@ PrefabInstance:
     - target: {fileID: 2312402698767422736, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 2312402698767422736, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
         type: 3}
@@ -1525,6 +1525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hand Menu With Button Activation
+      objectReference: {fileID: 0}
+    - target: {fileID: 5030734267259534324, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5030734267259534325, guid: 6a73dbe7f34ea864eb86f5bbfccaa033,
         type: 3}
